@@ -1,0 +1,1 @@
+Minimal boilerplate based on [madhums' work](https://github.com/madhums/node-express-mongoose).
