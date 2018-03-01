@@ -17,12 +17,15 @@ const join = require('path').join;
 const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./config');
+const postStart = require('./custom');
 
 const models = join(__dirname, 'app/models');
 const port = process.env.PORT || 3000;
 
 const app = express();
 const connection = connect();
+
+mongoose.set('debug', true);
 
 /**
  * Expose
@@ -46,10 +49,10 @@ connection
   .on('error', console.log)
   .on('disconnected', connect)
   .once('open', listen);
-
+  
 function listen () {
-  if (app.get('env') === 'test') return;
-  app.listen(port);
+  // calling a custom script after server start up
+  app.listen(port, postStart);
   console.log('Express app started on port ' + port);
 }
 

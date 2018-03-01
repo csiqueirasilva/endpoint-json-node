@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var userPlugin = require('mongoose-user');
 var Schema = mongoose.Schema;
 
 /**
@@ -7,7 +6,7 @@ var Schema = mongoose.Schema;
  */
 
 var OptionSchema = new Schema({
-  id: Schema.Types.ObjectId,
+  id: String, // use Schema.Types.ObjectId ?
   text: String,
   value: String
 });
