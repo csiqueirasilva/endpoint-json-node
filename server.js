@@ -18,12 +18,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./config');
 const postStart = require('./custom');
+var pretty = require('express-prettify');
 
 const models = join(__dirname, 'app/models');
 const port = process.env.PORT || 3000;
 
 const app = express();
 const connection = connect();
+
+app.use(pretty({ query: 'pretty' }));
 
 mongoose.set('debug', true);
 
