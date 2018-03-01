@@ -1,1 +1,1 @@
-Minimal boilerplate based on [madhums' work](https://github.com/madhums/node-express-mongoose).
+Minimal Express / Mongoose boilerplate based on [madhums' work](https://github.com/madhums/node-express-mongoose).
